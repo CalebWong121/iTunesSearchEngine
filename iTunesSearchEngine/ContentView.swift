@@ -8,14 +8,42 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var viewModel: ViewModel = ViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "Develop")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            List {
+                
+                
+                Text("Hello, world!")
+                Text("Hello, world!")
+            }
+            .navigationTitle("Songs")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 15)
+                            .fill(Color("TextFieldGray"))
+                        HStack {
+                            Image(systemName: "magnifyingglass")
+                                .foregroundColor(.gray)
+                            TextField(
+                                "Search",
+                                text: $viewModel.searchTerm
+                            )
+                            Spacer()
+                            if !viewModel.searchTerm.isEmpty {
+                                Button("Cancel"){
+                                    viewModel.searchTerm = ""
+                                }
+                            }
+                        }
+                        .padding(.horizontal, 20)
+                    }
+                }
+            }
         }
-        .padding()
     }
 }
 

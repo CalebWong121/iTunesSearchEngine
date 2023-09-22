@@ -14,6 +14,7 @@
 		3C79F1532ABD68D9007DE9C5 /* iTunesSearchEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F1522ABD68D9007DE9C5 /* iTunesSearchEngineTests.swift */; };
 		3C79F15D2ABD68D9007DE9C5 /* iTunesSearchEngineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F15C2ABD68D9007DE9C5 /* iTunesSearchEngineUITests.swift */; };
 		3C79F15F2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F15E2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift */; };
+		58D8CEA22ABD6F900012F9B1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8CEA12ABD6F900012F9B1 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		3C79F1582ABD68D9007DE9C5 /* iTunesSearchEngineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesSearchEngineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C79F15C2ABD68D9007DE9C5 /* iTunesSearchEngineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchEngineUITests.swift; sourceTree = "<group>"; };
 		3C79F15E2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchEngineUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		58D8CEA12ABD6F900012F9B1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				3C79F1412ABD68D7007DE9C5 /* iTunesSearchEngineApp.swift */,
 				3C79F1432ABD68D7007DE9C5 /* ContentView.swift */,
+				58D8CEA12ABD6F900012F9B1 /* ViewModel.swift */,
 				3C79F1452ABD68D9007DE9C5 /* Assets.xcassets */,
 				3C79F1472ABD68D9007DE9C5 /* Preview Content */,
 			);
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C79F1442ABD68D7007DE9C5 /* ContentView.swift in Sources */,
+				58D8CEA22ABD6F900012F9B1 /* ViewModel.swift in Sources */,
 				3C79F1422ABD68D7007DE9C5 /* iTunesSearchEngineApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,11 +424,12 @@
 				DEVELOPMENT_TEAM = 254C98284Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "iTunes Search Engine";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,11 +454,12 @@
 				DEVELOPMENT_TEAM = 254C98284Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "iTunes Search Engine";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
