@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C28B6C82ABED11A0009F667 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C28B6C72ABED11A0009F667 /* AlbumModel.swift */; };
+		3C28B6CA2ABF33D50009F667 /* FetchStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C28B6C92ABF33D50009F667 /* FetchStatusModel.swift */; };
+		3C28B6CC2ABFD8EF0009F667 /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C28B6CB2ABFD8EF0009F667 /* SongModel.swift */; };
+		3C28B6CE2ABFE31D0009F667 /* APIErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C28B6CD2ABFE31D0009F667 /* APIErrorModel.swift */; };
+		3C28B6D02AC015DF0009F667 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C28B6CF2AC015DF0009F667 /* APIManager.swift */; };
 		3C79F1422ABD68D7007DE9C5 /* iTunesSearchEngineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F1412ABD68D7007DE9C5 /* iTunesSearchEngineApp.swift */; };
 		3C79F1442ABD68D7007DE9C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F1432ABD68D7007DE9C5 /* ContentView.swift */; };
 		3C79F1462ABD68D9007DE9C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C79F1452ABD68D9007DE9C5 /* Assets.xcassets */; };
@@ -15,6 +20,14 @@
 		3C79F15D2ABD68D9007DE9C5 /* iTunesSearchEngineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F15C2ABD68D9007DE9C5 /* iTunesSearchEngineUITests.swift */; };
 		3C79F15F2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F15E2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift */; };
 		58D8CEA22ABD6F900012F9B1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8CEA12ABD6F900012F9B1 /* ViewModel.swift */; };
+		FD4FAC5C2AC1244A005DCFAF /* SongResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FAC5B2AC1244A005DCFAF /* SongResultView.swift */; };
+		FD4FAC602AC12730005DCFAF /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FAC5F2AC12730005DCFAF /* ImageView.swift */; };
+		FD4FAC622AC157B8005DCFAF /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FAC612AC157B8005DCFAF /* ImageViewModel.swift */; };
+		FD4FAC652AC15B06005DCFAF /* SongPreviewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FAC642AC15B06005DCFAF /* SongPreviewListView.swift */; };
+		FD4FAC672AC15C6F005DCFAF /* SongFullListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FAC662AC15C6F005DCFAF /* SongFullListView.swift */; };
+		FD4FAC692AC1692F005DCFAF /* AlbumResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FAC682AC1692F005DCFAF /* AlbumResultView.swift */; };
+		FD4FAC6D2AC16E9D005DCFAF /* AlbumPreviewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FAC6C2AC16E9D005DCFAF /* AlbumPreviewListView.swift */; };
+		FD4FAC712AC174B9005DCFAF /* AlbumFullListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FAC702AC174B9005DCFAF /* AlbumFullListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C28B6C72ABED11A0009F667 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		3C28B6C92ABF33D50009F667 /* FetchStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchStatusModel.swift; sourceTree = "<group>"; };
+		3C28B6CB2ABFD8EF0009F667 /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
+		3C28B6CD2ABFE31D0009F667 /* APIErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorModel.swift; sourceTree = "<group>"; };
+		3C28B6CF2AC015DF0009F667 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		3C79F13E2ABD68D7007DE9C5 /* iTunesSearchEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearchEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C79F1412ABD68D7007DE9C5 /* iTunesSearchEngineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchEngineApp.swift; sourceTree = "<group>"; };
 		3C79F1432ABD68D7007DE9C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +64,14 @@
 		3C79F15C2ABD68D9007DE9C5 /* iTunesSearchEngineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchEngineUITests.swift; sourceTree = "<group>"; };
 		3C79F15E2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchEngineUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		58D8CEA12ABD6F900012F9B1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		FD4FAC5B2AC1244A005DCFAF /* SongResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongResultView.swift; sourceTree = "<group>"; };
+		FD4FAC5F2AC12730005DCFAF /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		FD4FAC612AC157B8005DCFAF /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		FD4FAC642AC15B06005DCFAF /* SongPreviewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPreviewListView.swift; sourceTree = "<group>"; };
+		FD4FAC662AC15C6F005DCFAF /* SongFullListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongFullListView.swift; sourceTree = "<group>"; };
+		FD4FAC682AC1692F005DCFAF /* AlbumResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumResultView.swift; sourceTree = "<group>"; };
+		FD4FAC6C2AC16E9D005DCFAF /* AlbumPreviewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPreviewListView.swift; sourceTree = "<group>"; };
+		FD4FAC702AC174B9005DCFAF /* AlbumFullListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFullListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +99,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C28B6C62ABED1090009F667 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3C28B6C72ABED11A0009F667 /* AlbumModel.swift */,
+				3C28B6CB2ABFD8EF0009F667 /* SongModel.swift */,
+				3C28B6C92ABF33D50009F667 /* FetchStatusModel.swift */,
+				3C28B6CD2ABFE31D0009F667 /* APIErrorModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3C79F1352ABD68D7007DE9C5 = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +134,10 @@
 			isa = PBXGroup;
 			children = (
 				3C79F1412ABD68D7007DE9C5 /* iTunesSearchEngineApp.swift */,
-				3C79F1432ABD68D7007DE9C5 /* ContentView.swift */,
-				58D8CEA12ABD6F900012F9B1 /* ViewModel.swift */,
+				3C28B6CF2AC015DF0009F667 /* APIManager.swift */,
+				FD4FAC5A2AC12428005DCFAF /* View */,
+				FD4FAC632AC158C6005DCFAF /* ViewModel */,
+				3C28B6C62ABED1090009F667 /* Model */,
 				3C79F1452ABD68D9007DE9C5 /* Assets.xcassets */,
 				3C79F1472ABD68D9007DE9C5 /* Preview Content */,
 			);
@@ -128,6 +167,46 @@
 				3C79F15E2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift */,
 			);
 			path = iTunesSearchEngineUITests;
+			sourceTree = "<group>";
+		};
+		FD4FAC5A2AC12428005DCFAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3C79F1432ABD68D7007DE9C5 /* ContentView.swift */,
+				FD4FAC6F2AC16EBC005DCFAF /* Album */,
+				FD4FAC6E2AC16EA4005DCFAF /* Song */,
+				FD4FAC5F2AC12730005DCFAF /* ImageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FD4FAC632AC158C6005DCFAF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				58D8CEA12ABD6F900012F9B1 /* ViewModel.swift */,
+				FD4FAC612AC157B8005DCFAF /* ImageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FD4FAC6E2AC16EA4005DCFAF /* Song */ = {
+			isa = PBXGroup;
+			children = (
+				FD4FAC5B2AC1244A005DCFAF /* SongResultView.swift */,
+				FD4FAC642AC15B06005DCFAF /* SongPreviewListView.swift */,
+				FD4FAC662AC15C6F005DCFAF /* SongFullListView.swift */,
+			);
+			path = Song;
+			sourceTree = "<group>";
+		};
+		FD4FAC6F2AC16EBC005DCFAF /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				FD4FAC682AC1692F005DCFAF /* AlbumResultView.swift */,
+				FD4FAC6C2AC16E9D005DCFAF /* AlbumPreviewListView.swift */,
+				FD4FAC702AC174B9005DCFAF /* AlbumFullListView.swift */,
+			);
+			path = Album;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +339,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C28B6D02AC015DF0009F667 /* APIManager.swift in Sources */,
+				3C28B6CC2ABFD8EF0009F667 /* SongModel.swift in Sources */,
 				3C79F1442ABD68D7007DE9C5 /* ContentView.swift in Sources */,
+				FD4FAC692AC1692F005DCFAF /* AlbumResultView.swift in Sources */,
+				FD4FAC602AC12730005DCFAF /* ImageView.swift in Sources */,
+				FD4FAC712AC174B9005DCFAF /* AlbumFullListView.swift in Sources */,
 				58D8CEA22ABD6F900012F9B1 /* ViewModel.swift in Sources */,
+				FD4FAC622AC157B8005DCFAF /* ImageViewModel.swift in Sources */,
+				FD4FAC672AC15C6F005DCFAF /* SongFullListView.swift in Sources */,
 				3C79F1422ABD68D7007DE9C5 /* iTunesSearchEngineApp.swift in Sources */,
+				FD4FAC652AC15B06005DCFAF /* SongPreviewListView.swift in Sources */,
+				3C28B6CE2ABFE31D0009F667 /* APIErrorModel.swift in Sources */,
+				FD4FAC5C2AC1244A005DCFAF /* SongResultView.swift in Sources */,
+				3C28B6CA2ABF33D50009F667 /* FetchStatusModel.swift in Sources */,
+				3C28B6C82ABED11A0009F667 /* AlbumModel.swift in Sources */,
+				FD4FAC6D2AC16E9D005DCFAF /* AlbumPreviewListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
