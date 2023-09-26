@@ -41,10 +41,10 @@ struct SongFullListView: View {
             }
         }
         .navigationTitle("Songs")
-        .onAppear {
-            viewModel.limit = nil
-            viewModel.fetchSong(term: viewModel.searchTerm, id: id)
-        }
+//        .onAppear {
+//            viewModel.limit = nil
+//            viewModel.fetchSong(term: viewModel.searchTerm, id: id)
+//        }
     }
 }
 

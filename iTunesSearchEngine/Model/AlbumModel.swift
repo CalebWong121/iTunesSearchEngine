@@ -35,3 +35,9 @@ struct Album: Codable, Identifiable {
         case artworkUrl60, artworkUrl100, collectionPrice, collectionExplicitness, trackCount, copyright, country, currency, releaseDate, primaryGenreName
     }
 }
+
+// MARK: - NestedAlbums
+class NestedAlbums {
+    var albums: [Album] = []
+    var child: NestedAlbums? = nil
+}

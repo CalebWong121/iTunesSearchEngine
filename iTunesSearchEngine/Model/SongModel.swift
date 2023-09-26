@@ -44,4 +44,10 @@ struct Song: Codable, Identifiable {
     }
 }
 
+// MARK: - NestedSongs
+class NestedSongs {
+    var songs: [Song] = []
+    var child: NestedSongs? = nil
+}
+
 

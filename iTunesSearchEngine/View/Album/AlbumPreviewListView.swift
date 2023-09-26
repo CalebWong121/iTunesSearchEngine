@@ -15,7 +15,8 @@ struct AlbumPreviewListView: View {
                     .font(.footnote)
                     .onTapGesture {
                         shouldNav = true
-                        
+                        viewModel.limit = nil
+                        viewModel.fetchAlbum(term: viewModel.searchTerm)
                     }
                 NavigationLink(isActive: $shouldNav) {
                     AlbumFullListView(viewModel: viewModel)

@@ -18,6 +18,7 @@ struct ContentView: View {
                             text: $viewModel.searchTerm,
                             onCommit: {
                                 viewModel.fetchSong(term: viewModel.searchTerm)
+//                                viewModel.removeAlbums(node: viewModel.nestedAlbum)
                                 viewModel.fetchAlbum(term: viewModel.searchTerm)
                             }
                         )
@@ -39,8 +40,8 @@ struct ContentView: View {
                 .padding(.vertical, 10)
                 .onAppear {
                     viewModel.limit = 5
-                    viewModel.fetchSong(term: viewModel.searchTerm)
-                    viewModel.fetchAlbum(term: viewModel.searchTerm)
+//                    viewModel.fetchSong(term: viewModel.searchTerm)
+//                    viewModel.fetchAlbum(term: viewModel.searchTerm)
                 }
                 ScrollView {
                     VStack (spacing: 0) {
@@ -61,6 +62,7 @@ struct ContentView: View {
             .navigationTitle("iTunes Search Engine")
 
         }
+        .navigationViewStyle(.stack)
     }
 }
 

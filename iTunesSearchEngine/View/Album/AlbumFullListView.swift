@@ -45,10 +45,10 @@ struct AlbumFullListView: View {
             
         }
         .navigationTitle("Albums")
-        .onAppear {
-            viewModel.limit = nil
-            viewModel.fetchAlbum(term: viewModel.searchTerm)
-        }
+//        .onAppear {
+//            viewModel.limit = nil
+//            viewModel.fetchAlbum(term: viewModel.searchTerm)
+//        }
     }
 }
 

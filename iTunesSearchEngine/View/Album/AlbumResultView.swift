@@ -43,9 +43,9 @@ struct AlbumResultView: View {
                 }
             }
             .onTapGesture {
-//                viewModel.limit = nil
-//                viewModel.fetchSong(term: viewModel.searchTerm, id: collectionID)
                 shouldNav = true
+                viewModel.limit = nil
+                viewModel.fetchSong(id: collectionID)
             }
 
             NavigationLink(isActive: $shouldNav) {
