@@ -29,7 +29,7 @@ class APIManager {
         }.resume()
     }
     
-    func getURL(term: String?, id: Int?, entity: Entitytype, limit: Int? = nil, offset: Int? = nil) -> URL? {
+    func getURL(term: String?, id: Int?, entity: Entitytype, limit: Int? = nil, offset: Int? = nil, country: Country? = nil) -> URL? {
         
         var endPoint: String {
             if id != nil {
@@ -44,30 +44,36 @@ class APIManager {
         var components = URLComponents(string: endPoint)
         
         if let id = id {
-            components?.queryItems = [URLQueryItem(name: "id", value: String(id)),
-                                      URLQueryItem(name: "entity", value: entity.rawValue)]
-            
-            if let limit = limit {
-                components?.queryItems?.append(URLQueryItem(name: "limit", value: String(limit)))
-            }
-            if let offset = offset {
-                components?.queryItems?.append(URLQueryItem(name: "offset", value: String(offset)))
-            }
-            return components?.url
+            components?.queryItems = [URLQueryItem(name: "id", value: String(id))]
+        } else if let term = term {
+            components?.queryItems = [URLQueryItem(name: "term", value: term.filter({$0 != " "}))]
         }
         
-        if let term = term {
-            components?.queryItems = [URLQueryItem(name: "term", value: term.filter({$0 != " "})),
-                                      URLQueryItem(name: "entity", value: entity.rawValue)]
-            
-            if let limit = limit {
-                components?.queryItems?.append(URLQueryItem(name: "limit", value: String(limit)))
-            }
-            if let offset = offset {
-                components?.queryItems?.append(URLQueryItem(name: "offset", value: String(offset)))
-            }
-            return components?.url
+        
+        components?.queryItems?.append(URLQueryItem(name: "entity", value: entity.rawValue))
+        
+        if let limit = limit {
+            components?.queryItems?.append(URLQueryItem(name: "limit", value: String(limit)))
         }
+        if let offset = offset {
+            components?.queryItems?.append(URLQueryItem(name: "offset", value: String(offset)))
+        }
+        if let country = country {
+            components?.queryItems?.append(URLQueryItem(name: "country", value: country.rawValue))
+        }
+        
+//        if let term = term {
+//            components?.queryItems = [URLQueryItem(name: "term", value: term.filter({$0 != " "})),
+//                                      URLQueryItem(name: "entity", value: entity.rawValue)]
+//
+//            if let limit = limit {
+//                components?.queryItems?.append(URLQueryItem(name: "limit", value: String(limit)))
+//            }
+//            if let offset = offset {
+//                components?.queryItems?.append(URLQueryItem(name: "offset", value: String(offset)))
+//            }
+//            return components?.url
+//        }
         print("url: \(String(describing: components?.url))")
         
         return components?.url

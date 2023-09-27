@@ -18,8 +18,12 @@ struct SongPreviewListView: View {
             }
         }
         .padding(10)
+        .onAppear {
+            viewModel.limit = 5
+            viewModel.fetchSong(term: viewModel.searchTerm)            
+        }
         Divider()
-        switch viewModel.fetchStatus {
+        switch viewModel.songsFetchStatus {
         case .normal:
             ForEach(viewModel.songs.indices, id: \.self){ index in
                 if let artworkUrl60 = viewModel.songs[index].artworkUrl60,
@@ -27,7 +31,8 @@ struct SongPreviewListView: View {
                    let artistName = viewModel.songs[index].artistName,
                    let currency = viewModel.songs[index].currency,
                    let trackPrice = viewModel.songs[index].trackPrice,
-                   let artistID = viewModel.songs[index].artistID
+                   let artistID = viewModel.songs[index].artistID,
+                   let trackID = viewModel.songs[index].trackID
                 {
                     SongResultView(
                         viewModel: viewModel,
@@ -36,7 +41,9 @@ struct SongPreviewListView: View {
                         artistName: artistName,
                         currency: currency,
                         trackPrice: trackPrice,
-                        artistID: artistID
+                        artistID: artistID,
+                        trackID: trackID,
+                        bookMark: { viewModel.bookMark(song: viewModel.songs[index]) }
                     )
                 }
             }

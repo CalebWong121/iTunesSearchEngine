@@ -28,6 +28,10 @@
 		FD4FAC692AC1692F005DCFAF /* AlbumResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FAC682AC1692F005DCFAF /* AlbumResultView.swift */; };
 		FD4FAC6D2AC16E9D005DCFAF /* AlbumPreviewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FAC6C2AC16E9D005DCFAF /* AlbumPreviewListView.swift */; };
 		FD4FAC712AC174B9005DCFAF /* AlbumFullListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FAC702AC174B9005DCFAF /* AlbumFullListView.swift */; };
+		FD67A0F32AC2D8A40000D7DA /* AllResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD67A0F22AC2D8A40000D7DA /* AllResultView.swift */; };
+		FDA691972AC4169D000E7482 /* BookMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA691962AC4169D000E7482 /* BookMarkView.swift */; };
+		FDD07E3E2AC3C319004A8691 /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD07E3D2AC3C319004A8691 /* ArtistModel.swift */; };
+		FDD07E402AC405A8004A8691 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD07E3F2AC405A8004A8691 /* CountryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +76,10 @@
 		FD4FAC682AC1692F005DCFAF /* AlbumResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumResultView.swift; sourceTree = "<group>"; };
 		FD4FAC6C2AC16E9D005DCFAF /* AlbumPreviewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPreviewListView.swift; sourceTree = "<group>"; };
 		FD4FAC702AC174B9005DCFAF /* AlbumFullListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFullListView.swift; sourceTree = "<group>"; };
+		FD67A0F22AC2D8A40000D7DA /* AllResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllResultView.swift; sourceTree = "<group>"; };
+		FDA691962AC4169D000E7482 /* BookMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkView.swift; sourceTree = "<group>"; };
+		FDD07E3D2AC3C319004A8691 /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
+		FDD07E3F2AC405A8004A8691 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +112,10 @@
 			children = (
 				3C28B6C72ABED11A0009F667 /* AlbumModel.swift */,
 				3C28B6CB2ABFD8EF0009F667 /* SongModel.swift */,
+				FDD07E3D2AC3C319004A8691 /* ArtistModel.swift */,
 				3C28B6C92ABF33D50009F667 /* FetchStatusModel.swift */,
 				3C28B6CD2ABFE31D0009F667 /* APIErrorModel.swift */,
+				FDD07E3F2AC405A8004A8691 /* CountryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -138,6 +148,7 @@
 				FD4FAC5A2AC12428005DCFAF /* View */,
 				FD4FAC632AC158C6005DCFAF /* ViewModel */,
 				3C28B6C62ABED1090009F667 /* Model */,
+				FD4FAC5F2AC12730005DCFAF /* ImageView.swift */,
 				3C79F1452ABD68D9007DE9C5 /* Assets.xcassets */,
 				3C79F1472ABD68D9007DE9C5 /* Preview Content */,
 			);
@@ -173,9 +184,10 @@
 			isa = PBXGroup;
 			children = (
 				3C79F1432ABD68D7007DE9C5 /* ContentView.swift */,
+				FD67A0F22AC2D8A40000D7DA /* AllResultView.swift */,
+				FDA691962AC4169D000E7482 /* BookMarkView.swift */,
 				FD4FAC6F2AC16EBC005DCFAF /* Album */,
 				FD4FAC6E2AC16EA4005DCFAF /* Song */,
-				FD4FAC5F2AC12730005DCFAF /* ImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -345,9 +357,11 @@
 				FD4FAC692AC1692F005DCFAF /* AlbumResultView.swift in Sources */,
 				FD4FAC602AC12730005DCFAF /* ImageView.swift in Sources */,
 				FD4FAC712AC174B9005DCFAF /* AlbumFullListView.swift in Sources */,
+				FDD07E402AC405A8004A8691 /* CountryModel.swift in Sources */,
 				58D8CEA22ABD6F900012F9B1 /* ViewModel.swift in Sources */,
 				FD4FAC622AC157B8005DCFAF /* ImageViewModel.swift in Sources */,
 				FD4FAC672AC15C6F005DCFAF /* SongFullListView.swift in Sources */,
+				FD67A0F32AC2D8A40000D7DA /* AllResultView.swift in Sources */,
 				3C79F1422ABD68D7007DE9C5 /* iTunesSearchEngineApp.swift in Sources */,
 				FD4FAC652AC15B06005DCFAF /* SongPreviewListView.swift in Sources */,
 				3C28B6CE2ABFE31D0009F667 /* APIErrorModel.swift in Sources */,
@@ -355,6 +369,8 @@
 				3C28B6CA2ABF33D50009F667 /* FetchStatusModel.swift in Sources */,
 				3C28B6C82ABED11A0009F667 /* AlbumModel.swift in Sources */,
 				FD4FAC6D2AC16E9D005DCFAF /* AlbumPreviewListView.swift in Sources */,
+				FDA691972AC4169D000E7482 /* BookMarkView.swift in Sources */,
+				FDD07E3E2AC3C319004A8691 /* ArtistModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

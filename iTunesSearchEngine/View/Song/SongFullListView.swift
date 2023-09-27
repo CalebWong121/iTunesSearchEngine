@@ -2,33 +2,78 @@ import SwiftUI
 
 struct SongFullListView: View {
     @ObservedObject var viewModel: ViewModel
+    
+    @State var page: Int = 1
+    var filteredList: [Song] {
+        return viewModel.songs.filter({
+            $0.artworkUrl60 != nil &&
+            $0.trackName != nil &&
+            $0.artistName != nil &&
+            $0.currency != nil &&
+            $0.trackPrice != nil &&
+            $0.collectionID != nil &&
+            $0.artistID != nil &&
+            $0.trackID != nil
+        })
+    }
+    var maxPage: Int {
+        return Int(ceil(Double(filteredList.count) / 20.0))
+    }
     var id: Int? = nil
+    @State var isIn: Bool = false
     var body: some View {
         VStack {
-            switch viewModel.fetchStatus {
+            switch viewModel.songsFetchStatus {
             case .normal:
-                ScrollView {
-                    if !viewModel.songs.isEmpty {
-                        ForEach(viewModel.songs.indices, id: \.self){ index in
-                            if let artworkUrl60 = viewModel.songs[index].artworkUrl60,
-                               let trackName = viewModel.songs[index].trackName,
-                               let artistName = viewModel.songs[index].artistName,
-                               let currency = viewModel.songs[index].currency,
-                               let trackPrice = viewModel.songs[index].trackPrice,
-                               let artistID = viewModel.songs[index].artistID
-                            {
+                ScrollViewReader { scrollViewProxy in
+                    ScrollView {
+                        HStack {
+                            Text("Page \(page) in \(maxPage)")
+                            Spacer()
+                            Text("\(filteredList.count) results found")
+                        }
+                        .padding(.horizontal, 20)
+                        ForEach(filteredList.indices, id: \.self){ index in
+                            if index + 1 > ( page - 1 ) * 20 && index + 1 <= page * 20 {
                                 SongResultView(
                                     viewModel: viewModel,
-                                    artworkUrl60: artworkUrl60,
-                                    trackName: trackName,
-                                    artistName: artistName,
-                                    currency: currency,
-                                    trackPrice: trackPrice,
-                                    artistID: artistID
+                                    artworkUrl60: filteredList[index].artworkUrl60!,
+                                    trackName: filteredList[index].trackName!,
+                                    artistName: filteredList[index].artistName!,
+                                    currency: filteredList[index].currency!,
+                                    trackPrice: filteredList[index].trackPrice!,
+                                    artistID: filteredList[index].artistID!,
+                                    trackID: filteredList[index].trackID!,
+                                    bookMark: {
+                                        viewModel.bookMark(song: filteredList[index])
+//                                        print("Hi")
+                                    }
+                                    
                                 )
                             }
                         }
-                        
+                        HStack {
+                            Spacer()
+                            Button {
+                                if page > 1 {
+                                    page -= 1
+                                    scrollViewProxy.scrollTo(0, anchor: .top)
+                                }
+                            } label: {
+                                Image(systemName: "arrowtriangle.backward.fill")
+                            }
+                            Spacer()
+                            Button {
+                                if page < maxPage {
+                                    page += 1
+                                    scrollViewProxy.scrollTo(0, anchor: .top)
+                                }
+                            } label: {
+                                Image(systemName: "arrowtriangle.forward.fill")
+                            }
+                            Spacer()
+                        }
+                        .padding(.vertical, 20)
                     }
                 }
             case .noResult:
@@ -42,8 +87,12 @@ struct SongFullListView: View {
         }
         .navigationTitle("Songs")
         .onAppear {
-            viewModel.limit = nil
-            viewModel.fetchSong(term: viewModel.searchTerm, id: id)
+            if !isIn {
+                viewModel.limit = nil
+                viewModel.fetchSong(term: viewModel.searchTerm, id: id)
+                isIn = true
+                print("What")
+            }
         }
     }
 }

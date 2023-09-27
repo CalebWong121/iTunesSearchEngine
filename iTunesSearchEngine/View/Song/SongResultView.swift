@@ -15,6 +15,9 @@ struct SongResultView: View {
     var currency: String
     var trackPrice: Double
     var artistID: Int
+    var trackID: Int
+    
+    var bookMark: () -> Void
     @State var shouldNav: Bool = false
     var body: some View {
         GeometryReader { geometry in
@@ -47,7 +50,11 @@ struct SongResultView: View {
                 }
                 Spacer()
                 HStack (spacing: 0) {
-                    
+                    Image(systemName: viewModel.bookMarkList.map({$0.trackID}).contains(trackID) ? "star.fill" : "star")
+                        .foregroundColor(.yellow)
+                        .onTapGesture {
+                            bookMark()
+                        }
                     Text("\(currency)")
                         .font(.subheadline)
                     Text(String(format: "%.2f", trackPrice))
@@ -69,7 +76,9 @@ struct SongResultView_Previews: PreviewProvider {
             artistName: "Rick Astley",
             currency: "USD",
             trackPrice: 1.29,
-            artistID: 669771
+            artistID: 669771,
+            trackID: 123,
+            bookMark: { print("BookMark") }
         )
 
     }
