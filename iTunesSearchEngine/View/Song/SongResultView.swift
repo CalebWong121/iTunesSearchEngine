@@ -1,10 +1,3 @@
-//
-//  SongResultView.swift
-//  iTunesSearchEngine
-//
-//  Created by Wong Ka Ho Caleb on 2023/9/25.
-//
-
 import SwiftUI
 
 struct SongResultView: View {
@@ -16,9 +9,14 @@ struct SongResultView: View {
     var trackPrice: Double
     var artistID: Int
     var trackID: Int
+    var previewURL: String
     
     var bookMark: () -> Void
+    
     @State var shouldNav: Bool = false
+    var isPreviewing: Bool {
+        return viewModel.audioTrackID == trackID
+    }
     var body: some View {
         GeometryReader { geometry in
             HStack (spacing: 0) {
@@ -26,6 +24,7 @@ struct SongResultView: View {
                     .cornerRadius(10)
                     .padding(10)
                     .frame(width: geometry.size.height)
+                    
                 VStack (alignment: .leading, spacing: 8) {
                     Text(trackName)
                         .font(.headline)
@@ -49,18 +48,29 @@ struct SongResultView: View {
                     }
                 }
                 Spacer()
-                HStack (spacing: 0) {
+                HStack (spacing: 20) {
                     Image(systemName: viewModel.bookMarkList.map({$0.trackID}).contains(trackID) ? "star.fill" : "star")
                         .foregroundColor(.yellow)
                         .onTapGesture {
                             bookMark()
                         }
-                    Text("\(currency)")
-                        .font(.subheadline)
-                    Text(String(format: "%.2f", trackPrice))
-                        .font(.subheadline)
+                    Image(systemName: isPreviewing ? "stop.fill" : "play.fill")
+                        .onTapGesture {
+                            if !isPreviewing {
+                                viewModel.playAudio(from: URL(string: previewURL)!, for: trackID)
+                            } else {
+                                viewModel.stopAudio()
+                            }
+                        }
+                        .onDisappear {
+                            viewModel.stopAudio()
+                        }
+//                    Text("\(currency)")
+//                        .font(.subheadline)
+//                    Text(String(format: "%.2f", trackPrice))
+//                        .font(.subheadline)
                 }
-                .padding(10)
+                .padding(20)
             }
         }
         .frame(height: 80)
@@ -78,6 +88,7 @@ struct SongResultView_Previews: PreviewProvider {
             trackPrice: 1.29,
             artistID: 669771,
             trackID: 123,
+            previewURL: "123",
             bookMark: { print("BookMark") }
         )
 

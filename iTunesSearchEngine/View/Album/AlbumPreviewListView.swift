@@ -7,11 +7,11 @@ struct AlbumPreviewListView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Albums")
+                Text(AppString.albums[viewModel.language]!)
                 Spacer()
                 ZStack {
                     
-                    Text("More >")
+                    Text("\(AppString.more[viewModel.language]!) >")
                         .foregroundColor(.gray)
                         .font(.footnote)
                         .onTapGesture {
@@ -52,7 +52,7 @@ struct AlbumPreviewListView: View {
                     }
                 }
             case .noResult:
-                Text("No result found")
+                Text(AppString.noResultFound[viewModel.language]!)
             case .loading:
     //            Text("Loading...")
                 ProgressView()

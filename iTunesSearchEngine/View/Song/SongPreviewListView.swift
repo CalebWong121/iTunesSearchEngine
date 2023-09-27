@@ -6,12 +6,12 @@ struct SongPreviewListView: View {
     
     var body: some View {
         HStack {
-            Text("Songs")
+            Text(AppString.songs[viewModel.language]!)
             Spacer()
             NavigationLink {
                 SongFullListView(viewModel: viewModel)
             } label: {
-                Text("More >")
+                Text("\(AppString.more[viewModel.language]!) >")
                     .foregroundColor(.gray)
                     .font(.footnote)
                 
@@ -32,7 +32,8 @@ struct SongPreviewListView: View {
                    let currency = viewModel.songs[index].currency,
                    let trackPrice = viewModel.songs[index].trackPrice,
                    let artistID = viewModel.songs[index].artistID,
-                   let trackID = viewModel.songs[index].trackID
+                   let trackID = viewModel.songs[index].trackID,
+                   let previewURL = viewModel.songs[index].previewURL
                 {
                     SongResultView(
                         viewModel: viewModel,
@@ -43,12 +44,13 @@ struct SongPreviewListView: View {
                         trackPrice: trackPrice,
                         artistID: artistID,
                         trackID: trackID,
+                        previewURL: previewURL,
                         bookMark: { viewModel.bookMark(song: viewModel.songs[index]) }
                     )
                 }
             }
         case .noResult:
-            Text("No result found")
+            Text(AppString.noResultFound[viewModel.language]!)
         case .loading:
             ProgressView()
                 .progressViewStyle(.circular)

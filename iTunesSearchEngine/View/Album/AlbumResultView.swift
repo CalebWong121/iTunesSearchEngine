@@ -32,14 +32,14 @@ struct AlbumResultView: View {
                             .font(.subheadline)
                     }
                     Spacer()
-                    HStack (spacing: 0) {
-                        
-                        Text("\(currency)")
-                            .font(.subheadline)
-                        Text(String(format: "%.2f", collectionPrice))
-                            .font(.subheadline)
-                    }
-                    .padding(10)
+//                    HStack (spacing: 0) {
+//                        
+//                        Text("\(currency)")
+//                            .font(.subheadline)
+//                        Text(String(format: "%.2f", collectionPrice))
+//                            .font(.subheadline)
+//                    }
+//                    .padding(10)
                 }
             }
             .onTapGesture {

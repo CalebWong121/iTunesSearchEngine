@@ -1,10 +1,3 @@
-//
-//  AlbumFullListView.swift
-//  iTunesSearchEngine
-//
-//  Created by Wong Ka Ho Caleb on 2023/9/25.
-//
-
 import SwiftUI
 
 struct AlbumFullListView: View {
@@ -31,9 +24,9 @@ struct AlbumFullListView: View {
                 ScrollViewReader { scrollViewProxy in
                     ScrollView {
                         HStack {
-                            Text("Page \(page) in \(maxPage)")
+                            Text("\(AppString.page[viewModel.language]!) \(page) / \(maxPage)")
                             Spacer()
-                            Text("\(filteredList.count) results found")
+                            Text("\(filteredList.count) \(AppString.resultsFound[viewModel.language]!)")
                         }
                         .padding(.horizontal, 20)
                         ForEach(filteredList.indices, id: \.self){ index in
@@ -74,7 +67,7 @@ struct AlbumFullListView: View {
                     }
                 }
             case .noResult:
-                Text("No result found")
+                Text(AppString.noResultFound[viewModel.language]!)
             case .loading:
                 ProgressView()
                     .progressViewStyle(.circular)
@@ -83,7 +76,7 @@ struct AlbumFullListView: View {
             }
             
         }
-        .navigationTitle("Albums")
+        .navigationTitle(AppString.albums[viewModel.language]!)
         .onAppear {
             viewModel.limit = nil
             viewModel.fetchAlbum(term: viewModel.searchTerm)

@@ -24,7 +24,7 @@ struct AllResultView: View {
             }
             
         }
-        .navigationTitle("Results")
+        .navigationTitle(AppString.results[viewModel.language]!)
 //        .onAppear {
 //            viewModel.limit = 5
 //            viewModel.fetchSong(term: viewModel.searchTerm)

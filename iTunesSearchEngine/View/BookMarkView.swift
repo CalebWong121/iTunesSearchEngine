@@ -13,7 +13,7 @@ struct BookMarkView: View {
     var body: some View {
         ScrollView {
             if viewModel.bookMarkList.isEmpty {
-                Text("There is no book marked song now")
+                Text(AppString.noBookMark[viewModel.language]!)
             } else {
                 ForEach(viewModel.bookMarkList.indices, id: \.self){ index in
                     SongResultView(
@@ -25,12 +25,13 @@ struct BookMarkView: View {
                         trackPrice: viewModel.bookMarkList[index].trackPrice!,
                         artistID: viewModel.bookMarkList[index].artistID!,
                         trackID: viewModel.bookMarkList[index].trackID!,
+                        previewURL: viewModel.bookMarkList[index].previewURL!,
                         bookMark: { viewModel.bookMark(song: viewModel.bookMarkList[index]) }
                     )
                 }
             }
         }
-        .navigationTitle("Book Mark")
+        .navigationTitle(AppString.bookMark[viewModel.language]!)
     }
 }
 

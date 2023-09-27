@@ -13,7 +13,8 @@ struct SongFullListView: View {
             $0.trackPrice != nil &&
             $0.collectionID != nil &&
             $0.artistID != nil &&
-            $0.trackID != nil
+            $0.trackID != nil &&
+            $0.previewURL != nil
         })
     }
     var maxPage: Int {
@@ -28,9 +29,9 @@ struct SongFullListView: View {
                 ScrollViewReader { scrollViewProxy in
                     ScrollView {
                         HStack {
-                            Text("Page \(page) in \(maxPage)")
+                            Text("\(AppString.page[viewModel.language]!) \(page) / \(maxPage)")
                             Spacer()
-                            Text("\(filteredList.count) results found")
+                            Text("\(filteredList.count) \(AppString.resultsFound[viewModel.language]!)")
                         }
                         .padding(.horizontal, 20)
                         ForEach(filteredList.indices, id: \.self){ index in
@@ -44,6 +45,7 @@ struct SongFullListView: View {
                                     trackPrice: filteredList[index].trackPrice!,
                                     artistID: filteredList[index].artistID!,
                                     trackID: filteredList[index].trackID!,
+                                    previewURL: filteredList[index].previewURL!,
                                     bookMark: {
                                         viewModel.bookMark(song: filteredList[index])
 //                                        print("Hi")
@@ -77,7 +79,7 @@ struct SongFullListView: View {
                     }
                 }
             case .noResult:
-                Text("No result found")
+                Text(AppString.noResultFound[viewModel.language]!)
             case .loading:
                 ProgressView()
                     .progressViewStyle(.circular)
@@ -85,13 +87,12 @@ struct SongFullListView: View {
                 Text("Error: \(message)")
             }
         }
-        .navigationTitle("Songs")
+        .navigationTitle(AppString.songs[viewModel.language]!)
         .onAppear {
             if !isIn {
                 viewModel.limit = nil
                 viewModel.fetchSong(term: viewModel.searchTerm, id: id)
                 isIn = true
-                print("What")
             }
         }
     }

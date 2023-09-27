@@ -20,6 +20,8 @@
 		3C79F15D2ABD68D9007DE9C5 /* iTunesSearchEngineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F15C2ABD68D9007DE9C5 /* iTunesSearchEngineUITests.swift */; };
 		3C79F15F2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F15E2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift */; };
 		3CB8760B2AC475D6007D2E63 /* SearchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB8760A2AC475D6007D2E63 /* SearchHistoryView.swift */; };
+		3CB8760D2AC47DD0007D2E63 /* AppString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB8760C2AC47DD0007D2E63 /* AppString.swift */; };
+		3CB8760F2AC48B90007D2E63 /* AudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB8760E2AC48B90007D2E63 /* AudioViewModel.swift */; };
 		58D8CEA22ABD6F900012F9B1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8CEA12ABD6F900012F9B1 /* ViewModel.swift */; };
 		FD4FAC5C2AC1244A005DCFAF /* SongResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FAC5B2AC1244A005DCFAF /* SongResultView.swift */; };
 		FD4FAC602AC12730005DCFAF /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FAC5F2AC12730005DCFAF /* ImageView.swift */; };
@@ -69,6 +71,8 @@
 		3C79F15C2ABD68D9007DE9C5 /* iTunesSearchEngineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchEngineUITests.swift; sourceTree = "<group>"; };
 		3C79F15E2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchEngineUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3CB8760A2AC475D6007D2E63 /* SearchHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryView.swift; sourceTree = "<group>"; };
+		3CB8760C2AC47DD0007D2E63 /* AppString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppString.swift; sourceTree = "<group>"; };
+		3CB8760E2AC48B90007D2E63 /* AudioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewModel.swift; sourceTree = "<group>"; };
 		58D8CEA12ABD6F900012F9B1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		FD4FAC5B2AC1244A005DCFAF /* SongResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongResultView.swift; sourceTree = "<group>"; };
 		FD4FAC5F2AC12730005DCFAF /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 				FD4FAC632AC158C6005DCFAF /* ViewModel */,
 				3C28B6C62ABED1090009F667 /* Model */,
 				FD4FAC5F2AC12730005DCFAF /* ImageView.swift */,
+				3CB8760C2AC47DD0007D2E63 /* AppString.swift */,
 				3C79F1452ABD68D9007DE9C5 /* Assets.xcassets */,
 				3C79F1472ABD68D9007DE9C5 /* Preview Content */,
 			);
@@ -200,6 +205,7 @@
 			children = (
 				58D8CEA12ABD6F900012F9B1 /* ViewModel.swift */,
 				FD4FAC612AC157B8005DCFAF /* ImageViewModel.swift */,
+				3CB8760E2AC48B90007D2E63 /* AudioViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -356,10 +362,12 @@
 			files = (
 				3C28B6D02AC015DF0009F667 /* APIManager.swift in Sources */,
 				3C28B6CC2ABFD8EF0009F667 /* SongModel.swift in Sources */,
+				3CB8760F2AC48B90007D2E63 /* AudioViewModel.swift in Sources */,
 				3C79F1442ABD68D7007DE9C5 /* ContentView.swift in Sources */,
 				FD4FAC692AC1692F005DCFAF /* AlbumResultView.swift in Sources */,
 				FD4FAC602AC12730005DCFAF /* ImageView.swift in Sources */,
 				3CB8760B2AC475D6007D2E63 /* SearchHistoryView.swift in Sources */,
+				3CB8760D2AC47DD0007D2E63 /* AppString.swift in Sources */,
 				FD4FAC712AC174B9005DCFAF /* AlbumFullListView.swift in Sources */,
 				FDD07E402AC405A8004A8691 /* CountryModel.swift in Sources */,
 				58D8CEA22ABD6F900012F9B1 /* ViewModel.swift in Sources */,

@@ -1,5 +1,7 @@
 import Foundation
 import SwiftUI
+import AVKit
+import AVFoundation
 
 class ViewModel: ObservableObject {
     var apiManager: APIManager = APIManager()
@@ -15,6 +17,7 @@ class ViewModel: ObservableObject {
     @Published var country: Country = .us
     @Published var testArray: [String] = []
 
+    @AppStorage("language") var language: Language = .chi
     
     func fetchAlbum(term: String? = nil, id: Int? = nil){
 //        guard let url = URL(string: "https://itunes.apple.com/search?term=jackjohnson&entity=album&limit=5") else { return }
@@ -79,8 +82,32 @@ class ViewModel: ObservableObject {
         
     }
     
+    func getCountryString(country: Country) -> String {
+        switch country {
+        case .us:
+            return AppString.us[language]!
+        case .ca:
+            return AppString.ca[language]!
+        case .jp:
+            return AppString.jp[language]!
+        }
+    }
     
+    private var player: AVPlayer?
+    @Published var audioTrackID: Int = 0
     
+    func playAudio(from url: URL, for trackID: Int) {
+        audioTrackID = trackID
+        let playerItem = AVPlayerItem(url: url)
+        player = AVPlayer(playerItem: playerItem)
+        player?.play()
+    }
+    
+    func stopAudio() {
+        audioTrackID = 0
+        player?.pause()
+        player = nil
+    }
     
 }
 

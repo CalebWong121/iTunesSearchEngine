@@ -17,7 +17,7 @@ struct ContentView: View {
                             Image(systemName: "magnifyingglass")
                                 .foregroundColor(.gray)
                             TextField(
-                                "Search",
+                                AppString.search[viewModel.language]!,
                                 text: $viewModel.searchTerm,
                                 onCommit: {
                                     if !viewModel.searchTerm.isEmpty {
@@ -44,23 +44,23 @@ struct ContentView: View {
                     .frame(height: 40)
                     .padding(.vertical, 10)
                     HStack {
-                        Text("Filter by country:")
-                        Picker("Number", selection: $viewModel.country) {
+                        Text("\(AppString.filterByCountry[viewModel.language]!):")
+                        Picker("Country", selection: $viewModel.country) {
                             ForEach(Country.allCases) { country in
-                                Text(country.rawValue).tag(country)
+                                Text(viewModel.getCountryString(country: country)).tag(country)
                             }
                         }
-                        .frame(width: 60)
+                        .frame(width: 150)
                         Spacer()
                         NavigationLink {
                             BookMarkView(viewModel: viewModel)
                         } label: {
-                            Text("Book Mark")
+                            Text(AppString.bookMark[viewModel.language]!)
                         }
                     }
                     Divider()
                     HStack {
-                        Text("Search history:")
+                        Text("\(AppString.searchHistory[viewModel.language]!):")
                             .font(.title3)
                         Spacer()
                     }
@@ -78,7 +78,15 @@ struct ContentView: View {
                 Spacer()
             }
             .navigationTitle("iTunes Search")
-
+            .toolbar {
+                ToolbarItem {
+                    Picker("Language", selection: $viewModel.language) {
+                        ForEach(Language.allCases) { language in
+                            Text(language.rawValue).tag(language)
+                        }
+                    }
+                }
+            }
         }
     }
 }
