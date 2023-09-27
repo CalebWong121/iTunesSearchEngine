@@ -6,7 +6,7 @@ struct SongFullListView: View {
     @State var page: Int = 1
     var filteredList: [Song] {
         return viewModel.songs.filter({
-            $0.artworkUrl60 != nil &&
+            $0.artworkUrl100 != nil &&
             $0.trackName != nil &&
             $0.artistName != nil &&
             $0.currency != nil &&
@@ -22,6 +22,12 @@ struct SongFullListView: View {
     }
     var id: Int? = nil
     @State var isIn: Bool = false
+    
+    var column: [GridItem] = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    
     var body: some View {
         VStack {
             switch viewModel.songsFetchStatus {
@@ -34,24 +40,26 @@ struct SongFullListView: View {
                             Text("\(filteredList.count) \(AppString.resultsFound[viewModel.language]!)")
                         }
                         .padding(.horizontal, 20)
-                        ForEach(filteredList.indices, id: \.self){ index in
-                            if index + 1 > ( page - 1 ) * 20 && index + 1 <= page * 20 {
-                                SongResultView(
-                                    viewModel: viewModel,
-                                    artworkUrl60: filteredList[index].artworkUrl60!,
-                                    trackName: filteredList[index].trackName!,
-                                    artistName: filteredList[index].artistName!,
-                                    currency: filteredList[index].currency!,
-                                    trackPrice: filteredList[index].trackPrice!,
-                                    artistID: filteredList[index].artistID!,
-                                    trackID: filteredList[index].trackID!,
-                                    previewURL: filteredList[index].previewURL!,
-                                    bookMark: {
-                                        viewModel.bookMark(song: filteredList[index])
-//                                        print("Hi")
-                                    }
-                                    
-                                )
+                        LazyVGrid(columns: column) {
+                            ForEach(filteredList.indices, id: \.self){ index in
+                                if index + 1 > ( page - 1 ) * 20 && index + 1 <= page * 20 {
+                                    SongResultView(
+                                        viewModel: viewModel,
+                                        artworkUrl100: filteredList[index].artworkUrl100!,
+                                        trackName: filteredList[index].trackName!,
+                                        artistName: filteredList[index].artistName!,
+                                        currency: filteredList[index].currency!,
+                                        trackPrice: filteredList[index].trackPrice!,
+                                        artistID: filteredList[index].artistID!,
+                                        trackID: filteredList[index].trackID!,
+                                        previewURL: filteredList[index].previewURL!,
+                                        bookMark: {
+                                            viewModel.bookMark(song: filteredList[index])
+                                            //                                        print("Hi")
+                                        }
+                                        
+                                    )
+                                }
                             }
                         }
                         HStack {

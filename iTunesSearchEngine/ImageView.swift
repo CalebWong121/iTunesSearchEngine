@@ -6,11 +6,13 @@ struct ImageView: View {
     
     init(urlString: String?) {
         imageViewModel = ImageViewModel(urlString: urlString)
+        print("Hi")
     }
     
     var body: some View {
         Image(uiImage: imageViewModel.image ?? UIImage())
             .resizable()
+            .scaledToFit()
     }
 }
 

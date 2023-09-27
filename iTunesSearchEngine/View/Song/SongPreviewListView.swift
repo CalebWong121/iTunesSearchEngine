@@ -25,30 +25,36 @@ struct SongPreviewListView: View {
         Divider()
         switch viewModel.songsFetchStatus {
         case .normal:
-            ForEach(viewModel.songs.indices, id: \.self){ index in
-                if let artworkUrl60 = viewModel.songs[index].artworkUrl60,
-                   let trackName = viewModel.songs[index].trackName,
-                   let artistName = viewModel.songs[index].artistName,
-                   let currency = viewModel.songs[index].currency,
-                   let trackPrice = viewModel.songs[index].trackPrice,
-                   let artistID = viewModel.songs[index].artistID,
-                   let trackID = viewModel.songs[index].trackID,
-                   let previewURL = viewModel.songs[index].previewURL
-                {
-                    SongResultView(
-                        viewModel: viewModel,
-                        artworkUrl60: artworkUrl60,
-                        trackName: trackName,
-                        artistName: artistName,
-                        currency: currency,
-                        trackPrice: trackPrice,
-                        artistID: artistID,
-                        trackID: trackID,
-                        previewURL: previewURL,
-                        bookMark: { viewModel.bookMark(song: viewModel.songs[index]) }
-                    )
+            ScrollView(.horizontal) {
+                HStack {
+                    ForEach(viewModel.songs.indices, id: \.self){ index in
+                        if let artworkUrl100 = viewModel.songs[index].artworkUrl100,
+                           let trackName = viewModel.songs[index].trackName,
+                           let artistName = viewModel.songs[index].artistName,
+                           let currency = viewModel.songs[index].currency,
+                           let trackPrice = viewModel.songs[index].trackPrice,
+                           let artistID = viewModel.songs[index].artistID,
+                           let trackID = viewModel.songs[index].trackID,
+                           let previewURL = viewModel.songs[index].previewURL
+                        {
+                            SongResultView(
+                                viewModel: viewModel,
+                                artworkUrl100: artworkUrl100,
+                                trackName: trackName,
+                                artistName: artistName,
+                                currency: currency,
+                                trackPrice: trackPrice,
+                                artistID: artistID,
+                                trackID: trackID,
+                                previewURL: previewURL,
+                                bookMark: { viewModel.bookMark(song: viewModel.songs[index]) }
+                            )
+                        }
+                    }
+                    .frame(width: 150)
                 }
             }
+            .frame(height: 200)
         case .noResult:
             Text(AppString.noResultFound[viewModel.language]!)
         case .loading:
