@@ -20,7 +20,12 @@ struct ContentView: View {
                                 "Search",
                                 text: $viewModel.searchTerm,
                                 onCommit: {
-                                    ShouldNav = true
+                                    if !viewModel.searchTerm.isEmpty {
+                                        ShouldNav = true
+                                        if !viewModel.searchHistory.contains(viewModel.searchTerm) {
+                                            viewModel.searchHistory.append(viewModel.searchTerm)
+                                        }
+                                    }
                                 }
                             )
                             .autocapitalization(.none)
@@ -60,6 +65,9 @@ struct ContentView: View {
                         Spacer()
                     }
                     .padding(10)
+                    SearchHistoryView(viewModel: viewModel, onCommit: {
+                        ShouldNav = true
+                    })
                 }
                 .padding(.horizontal, 20)
                 NavigationLink(isActive: $ShouldNav) {
@@ -69,7 +77,7 @@ struct ContentView: View {
                 }
                 Spacer()
             }
-            .navigationTitle("iTunes Search Engine")
+            .navigationTitle("iTunes Search")
 
         }
     }

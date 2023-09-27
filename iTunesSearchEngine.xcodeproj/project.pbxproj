@@ -19,6 +19,7 @@
 		3C79F1532ABD68D9007DE9C5 /* iTunesSearchEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F1522ABD68D9007DE9C5 /* iTunesSearchEngineTests.swift */; };
 		3C79F15D2ABD68D9007DE9C5 /* iTunesSearchEngineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F15C2ABD68D9007DE9C5 /* iTunesSearchEngineUITests.swift */; };
 		3C79F15F2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F15E2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift */; };
+		3CB8760B2AC475D6007D2E63 /* SearchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB8760A2AC475D6007D2E63 /* SearchHistoryView.swift */; };
 		58D8CEA22ABD6F900012F9B1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8CEA12ABD6F900012F9B1 /* ViewModel.swift */; };
 		FD4FAC5C2AC1244A005DCFAF /* SongResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FAC5B2AC1244A005DCFAF /* SongResultView.swift */; };
 		FD4FAC602AC12730005DCFAF /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FAC5F2AC12730005DCFAF /* ImageView.swift */; };
@@ -67,6 +68,7 @@
 		3C79F1582ABD68D9007DE9C5 /* iTunesSearchEngineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesSearchEngineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C79F15C2ABD68D9007DE9C5 /* iTunesSearchEngineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchEngineUITests.swift; sourceTree = "<group>"; };
 		3C79F15E2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchEngineUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3CB8760A2AC475D6007D2E63 /* SearchHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryView.swift; sourceTree = "<group>"; };
 		58D8CEA12ABD6F900012F9B1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		FD4FAC5B2AC1244A005DCFAF /* SongResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongResultView.swift; sourceTree = "<group>"; };
 		FD4FAC5F2AC12730005DCFAF /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				3C79F1432ABD68D7007DE9C5 /* ContentView.swift */,
 				FD67A0F22AC2D8A40000D7DA /* AllResultView.swift */,
 				FDA691962AC4169D000E7482 /* BookMarkView.swift */,
+				3CB8760A2AC475D6007D2E63 /* SearchHistoryView.swift */,
 				FD4FAC6F2AC16EBC005DCFAF /* Album */,
 				FD4FAC6E2AC16EA4005DCFAF /* Song */,
 			);
@@ -356,6 +359,7 @@
 				3C79F1442ABD68D7007DE9C5 /* ContentView.swift in Sources */,
 				FD4FAC692AC1692F005DCFAF /* AlbumResultView.swift in Sources */,
 				FD4FAC602AC12730005DCFAF /* ImageView.swift in Sources */,
+				3CB8760B2AC475D6007D2E63 /* SearchHistoryView.swift in Sources */,
 				FD4FAC712AC174B9005DCFAF /* AlbumFullListView.swift in Sources */,
 				FDD07E402AC405A8004A8691 /* CountryModel.swift in Sources */,
 				58D8CEA22ABD6F900012F9B1 /* ViewModel.swift in Sources */,

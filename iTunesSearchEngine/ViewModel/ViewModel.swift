@@ -11,6 +11,7 @@ class ViewModel: ObservableObject {
     @Published var albums: [Album] = []
     @Published var songs: [Song] = []
     @AppStorage("bookMarkList") var bookMarkList: [Song] = []
+    @AppStorage("searchHistory") var searchHistory: [String] = []
     @Published var country: Country = .us
     @Published var testArray: [String] = []
 
