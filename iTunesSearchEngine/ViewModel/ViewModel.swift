@@ -17,7 +17,7 @@ class ViewModel: ObservableObject {
     @Published var country: Country = .us
     @Published var testArray: [String] = []
 
-    @AppStorage("language") var language: Language = .chi
+    @AppStorage("language") var language: Language = .eng
     
     func fetchAlbum(term: String? = nil, id: Int? = nil){
         guard albumsFetchStatus == .normal || albumsFetchStatus == .noResult else { return }

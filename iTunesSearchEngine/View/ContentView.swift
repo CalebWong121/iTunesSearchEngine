@@ -3,46 +3,15 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject var viewModel: ViewModel = ViewModel()
-    @State var ShouldNav: Bool = false
+    @State var shouldNav: Bool = false
     
     var body: some View {
         NavigationView {
             VStack {
                 
-                VStack (spacing: 0) {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 15)
-                            .fill(Color("TextFieldGray"))
-                        HStack {
-                            Image(systemName: "magnifyingglass")
-                                .foregroundColor(.gray)
-                            TextField(
-                                AppString.search[viewModel.language]!,
-                                text: $viewModel.searchTerm,
-                                onCommit: {
-                                    if !viewModel.searchTerm.isEmpty {
-                                        ShouldNav = true
-                                        if !viewModel.searchHistory.contains(viewModel.searchTerm) {
-                                            viewModel.searchHistory.append(viewModel.searchTerm)
-                                        }
-                                    }
-                                }
-                            )
-                            .autocapitalization(.none)
-                            .autocorrectionDisabled(true)
-                            Spacer()
-                            if !viewModel.searchTerm.isEmpty {
-                                Image(systemName: "multiply.circle.fill")
-                                    .foregroundColor(.gray)
-                                    .onTapGesture {
-                                        viewModel.searchTerm = ""
-                                    }
-                            }
-                        }
-                        .padding(.horizontal, 20)
-                    }
+                VStack (spacing: 20) {
+                    SearchBarView(viewModel: viewModel, shouldNav: $shouldNav)
                     .frame(height: 40)
-                    .padding(.vertical, 10)
                     HStack {
                         Text("\(AppString.filterByCountry[viewModel.language]!):")
                         Picker("Country", selection: $viewModel.country) {
@@ -66,11 +35,11 @@ struct ContentView: View {
                     }
                     .padding(10)
                     SearchHistoryView(viewModel: viewModel, onCommit: {
-                        ShouldNav = true
+                        shouldNav = true
                     })
                 }
                 .padding(.horizontal, 20)
-                NavigationLink(isActive: $ShouldNav) {
+                NavigationLink(isActive: $shouldNav) {
                     AllResultView(viewModel: viewModel)
                 } label: {
                     EmptyView()
