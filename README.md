@@ -24,15 +24,15 @@ Prerequisites
 
 ## Steps
 
-- Clone the repository to your local machine.
+1. Clone the repository to your local machine.
  
  ```bash
     git clone https://github.com/CalebWong121/iTunesSearchEngine.git
  ```
-- Open the project in Xcode by double-clicking the iTunesSearchEngine.xcodeproj file.
-- In Xcode, select a simulator or connect your iOS device.
-- Build and run the app by clicking the "Run" button or pressing Cmd + R.
-- The app should launch on the selected simulator or device.
+2. Open the project in Xcode by double-clicking the iTunesSearchEngine.xcodeproj file.
+3. In Xcode, select a simulator or connect your iOS device.
+4. Build and run the app by clicking the "Run" button or pressing Cmd + R.
+5. The app should launch on the selected simulator or device.
           
 ## Acknowledgments
 
