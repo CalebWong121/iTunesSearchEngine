@@ -20,8 +20,6 @@ class ViewModel: ObservableObject {
     @AppStorage("language") var language: Language = .chi
     
     func fetchAlbum(term: String? = nil, id: Int? = nil){
-//        guard let url = URL(string: "https://itunes.apple.com/search?term=jackjohnson&entity=album&limit=5") else { return }
-//        guard !searchTerm.isEmpty else { return }
         guard albumsFetchStatus == .normal || albumsFetchStatus == .noResult else { return }
         print("fetchAlbum")
         albumsFetchStatus = .loading
@@ -38,7 +36,6 @@ class ViewModel: ObservableObject {
                     }
                 case .failure(let error):
                     print(error)
-//                    self.fetchStatus = .error("Fetch error: \(error)")
                     self.albumsFetchStatus = .normal
 
                 }
@@ -47,8 +44,6 @@ class ViewModel: ObservableObject {
         
     }
     func fetchSong(term: String? = nil, id: Int? = nil){
-//        guard let url = URL(string: "https://itunes.apple.com/search?term=jackjohnson&entity=album&limit=5") else { return }
-//        guard !searchTerm.isEmpty else { return }
         guard songsFetchStatus == .normal || songsFetchStatus == .noResult else { return }
         print("fetchSong")
         songsFetchStatus = .loading
@@ -65,7 +60,6 @@ class ViewModel: ObservableObject {
                     }
                 case .failure(let error):
                     print(error)
-//                    self.fetchStatus = .error("Fetch error: \(error)")
                     self.songsFetchStatus = .normal
                 }
             }

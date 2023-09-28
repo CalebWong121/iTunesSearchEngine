@@ -17,7 +17,6 @@ class APIManager {
                 completion(Result.failure(APIError.badResponse(response.statusCode)))
             } else if let data = data {
                 do {
-//                    let result = try JSONDecoder().decode(AlbumResult.self, from: data)
                     
                     let result = try JSONDecoder().decode(type, from: data)
                     completion(Result.success(result))
@@ -61,20 +60,6 @@ class APIManager {
         if let country = country {
             components?.queryItems?.append(URLQueryItem(name: "country", value: country.rawValue))
         }
-        
-//        if let term = term {
-//            components?.queryItems = [URLQueryItem(name: "term", value: term.filter({$0 != " "})),
-//                                      URLQueryItem(name: "entity", value: entity.rawValue)]
-//
-//            if let limit = limit {
-//                components?.queryItems?.append(URLQueryItem(name: "limit", value: String(limit)))
-//            }
-//            if let offset = offset {
-//                components?.queryItems?.append(URLQueryItem(name: "offset", value: String(offset)))
-//            }
-//            return components?.url
-//        }
-        print("url: \(String(describing: components?.url))")
         
         return components?.url
     }

@@ -1,4 +1,5 @@
 import SwiftUI
+import Kingfisher
 
 struct SongResultView: View {
     @ObservedObject var viewModel: ViewModel
@@ -20,9 +21,11 @@ struct SongResultView: View {
     var body: some View {
         VStack (spacing: 0) {
             ZStack {
-                ImageView(urlString: artworkUrl100)
+                KFImage(URL(string: artworkUrl100))
+                    .resizable()
+                    .scaledToFit()
                     .cornerRadius(10)
-//                    .frame(height: geometry.size.width)
+                
                 Image(systemName: isPreviewing ? "stop.fill" : "play.fill")
                     .scaleEffect(3)
                     .font(.title)
@@ -38,29 +41,22 @@ struct SongResultView: View {
                         viewModel.stopAudio()
                     }
             }
-            HStack {
-                VStack (alignment: .leading, spacing: 0) {
-                    Text(trackName)
-                        .font(.headline)
-                        .lineLimit(2)
-                    ZStack {
-                        Text(artistName)
-                            .font(.subheadline)
-                            .lineLimit(1)
-                        NavigationLink(isActive: $shouldNav) {
-                            SongFullListView(viewModel: viewModel, id: artistID)
-                        } label: {
-                            EmptyView()
+            VStack (alignment: .leading, spacing: 0) {
+                Text(trackName)
+                    .font(.headline)
+                    .lineLimit(1)
+                HStack {
+                    Text(artistName)
+                        .font(.subheadline)
+                        .lineLimit(1)
+                    Spacer()
+                    Image(systemName: viewModel.bookMarkList.map({$0.trackID}).contains(trackID) ? "star.fill" : "star")
+                        .font(.title)
+                        .foregroundColor(.yellow)
+                        .onTapGesture {
+                            bookMark()
                         }
-                    }
                 }
-                Spacer()
-                Image(systemName: viewModel.bookMarkList.map({$0.trackID}).contains(trackID) ? "star.fill" : "star")
-                    .font(.title)
-                    .foregroundColor(.yellow)
-                    .onTapGesture {
-                        bookMark()
-                    }
             }
             .padding(10)
         }
@@ -71,10 +67,6 @@ struct SongResultView: View {
 
 struct SongResultView_Previews: PreviewProvider {
     static var previews: some View {
-//        var column: [GridItem] = [
-//            GridItem(.flexible()),
-//            GridItem(.flexible())
-//        ]
         var column: [GridItem] = [
             GridItem(.flexible()),
             GridItem(.flexible())

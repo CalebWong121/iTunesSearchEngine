@@ -1,10 +1,3 @@
-//
-//  SearchHistoryView.swift
-//  iTunesSearchEngine
-//
-//  Created by Caleb Wong on 27/9/2023.
-//
-
 import SwiftUI
 
 struct SearchHistoryView: View {

@@ -1,11 +1,5 @@
-//
-//  AlbumResultView.swift
-//  iTunesSearchEngine
-//
-//  Created by Wong Ka Ho Caleb on 2023/9/25.
-//
-
 import SwiftUI
+import Kingfisher
 
 struct AlbumResultView: View {
     @ObservedObject var viewModel: ViewModel
@@ -21,7 +15,8 @@ struct AlbumResultView: View {
         ZStack {
             GeometryReader { geometry in
                 HStack (spacing: 0) {
-                    ImageView(urlString: artworkUrl60)
+                    KFImage(URL(string: artworkUrl60))
+                        .resizable()
                         .cornerRadius(10)
                         .padding(10)
                         .frame(width: geometry.size.height)
@@ -32,19 +27,9 @@ struct AlbumResultView: View {
                             .font(.subheadline)
                     }
                     Spacer()
-//                    HStack (spacing: 0) {
-//                        
-//                        Text("\(currency)")
-//                            .font(.subheadline)
-//                        Text(String(format: "%.2f", collectionPrice))
-//                            .font(.subheadline)
-//                    }
-//                    .padding(10)
                 }
             }
             .onTapGesture {
-//                viewModel.limit = nil
-//                viewModel.fetchSong(term: viewModel.searchTerm, id: collectionID)
                 shouldNav = true
             }
 

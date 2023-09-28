@@ -4,6 +4,20 @@ struct SongPreviewListView: View {
     
     @ObservedObject var viewModel: ViewModel
     
+    var filteredList: [Song] {
+        return viewModel.songs.filter({
+            $0.artworkUrl100 != nil &&
+            $0.trackName != nil &&
+            $0.artistName != nil &&
+            $0.currency != nil &&
+            $0.trackPrice != nil &&
+            $0.collectionID != nil &&
+            $0.artistID != nil &&
+            $0.trackID != nil &&
+            $0.previewURL != nil
+        })
+    }
+    
     var body: some View {
         HStack {
             Text(AppString.songs[viewModel.language]!)
@@ -27,29 +41,21 @@ struct SongPreviewListView: View {
         case .normal:
             ScrollView(.horizontal) {
                 HStack {
-                    ForEach(viewModel.songs.indices, id: \.self){ index in
-                        if let artworkUrl100 = viewModel.songs[index].artworkUrl100,
-                           let trackName = viewModel.songs[index].trackName,
-                           let artistName = viewModel.songs[index].artistName,
-                           let currency = viewModel.songs[index].currency,
-                           let trackPrice = viewModel.songs[index].trackPrice,
-                           let artistID = viewModel.songs[index].artistID,
-                           let trackID = viewModel.songs[index].trackID,
-                           let previewURL = viewModel.songs[index].previewURL
-                        {
-                            SongResultView(
-                                viewModel: viewModel,
-                                artworkUrl100: artworkUrl100,
-                                trackName: trackName,
-                                artistName: artistName,
-                                currency: currency,
-                                trackPrice: trackPrice,
-                                artistID: artistID,
-                                trackID: trackID,
-                                previewURL: previewURL,
-                                bookMark: { viewModel.bookMark(song: viewModel.songs[index]) }
-                            )
-                        }
+                    ForEach(filteredList.indices, id: \.self){ index in
+                        SongResultView(
+                            viewModel: viewModel,
+                            artworkUrl100: filteredList[index].artworkUrl100!,
+                            trackName: filteredList[index].trackName!,
+                            artistName: filteredList[index].artistName!,
+                            currency: filteredList[index].currency!,
+                            trackPrice: filteredList[index].trackPrice!,
+                            artistID: filteredList[index].artistID!,
+                            trackID: filteredList[index].trackID!,
+                            previewURL: filteredList[index].previewURL!,
+                            bookMark: {
+                                viewModel.bookMark(song: filteredList[index])
+                            }
+                        )
                     }
                     .frame(width: 150)
                 }

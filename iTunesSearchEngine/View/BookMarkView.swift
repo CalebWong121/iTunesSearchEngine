@@ -1,10 +1,3 @@
-//
-//  BookMarkView.swift
-//  iTunesSearchEngine
-//
-//  Created by Wong Ka Ho Caleb on 2023/9/27.
-//
-
 import SwiftUI
 
 struct BookMarkView: View {

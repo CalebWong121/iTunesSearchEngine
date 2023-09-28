@@ -4,6 +4,17 @@ struct AlbumPreviewListView: View {
     
     @ObservedObject var viewModel: ViewModel
     @State var shouldNav: Bool = false
+    
+    var filteredList: [Album] {
+        return viewModel.albums.filter({
+            $0.artworkUrl60 != nil &&
+            $0.collectionName != nil &&
+            $0.artistName != nil &&
+            $0.currency != nil &&
+            $0.collectionPrice != nil &&
+            $0.collectionID != nil
+        })
+    }
     var body: some View {
         VStack {
             HStack {
@@ -20,7 +31,6 @@ struct AlbumPreviewListView: View {
                         }
                     NavigationLink(isActive: $shouldNav) {
                         AlbumFullListView(viewModel: viewModel)
-    //                    SongFullListView(viewModel: viewModel, id: 1610829136)
                     } label: {
                         EmptyView()
 
@@ -32,24 +42,16 @@ struct AlbumPreviewListView: View {
             Divider()
             switch viewModel.albumsFetchStatus {
             case .normal:
-                ForEach(viewModel.albums.indices, id: \.self){ index in
-                    if let artworkUrl60 = viewModel.albums[index].artworkUrl60,
-                       let collectionName = viewModel.albums[index].collectionName,
-                       let artistName = viewModel.albums[index].artistName,
-                       let currency = viewModel.albums[index].currency,
-                       let collectionPrice = viewModel.albums[index].collectionPrice,
-                       let collectionID = viewModel.albums[index].collectionID
-                    {
-                        AlbumResultView(
-                            viewModel: viewModel,
-                            artworkUrl60: artworkUrl60,
-                            collectionName: collectionName,
-                            artistName: artistName,
-                            currency: currency,
-                            collectionPrice: collectionPrice,
-                            collectionID: collectionID
-                        )
-                    }
+                ForEach(filteredList.indices, id: \.self){ index in
+                    AlbumResultView(
+                        viewModel: viewModel,
+                        artworkUrl60: filteredList[index].artworkUrl60!,
+                        collectionName: filteredList[index].collectionName!,
+                        artistName: filteredList[index].artistName!,
+                        currency: filteredList[index].currency!,
+                        collectionPrice: filteredList[index].collectionPrice!,
+                        collectionID: filteredList[index].collectionID!
+                    )
                 }
             case .noResult:
                 Text(AppString.noResultFound[viewModel.language]!)

@@ -55,9 +55,7 @@ struct SongFullListView: View {
                                         previewURL: filteredList[index].previewURL!,
                                         bookMark: {
                                             viewModel.bookMark(song: filteredList[index])
-                                            //                                        print("Hi")
                                         }
-                                        
                                     )
                                 }
                             }

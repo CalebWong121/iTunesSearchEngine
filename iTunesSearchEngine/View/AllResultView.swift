@@ -1,10 +1,3 @@
-//
-//  AllResultView.swift
-//  iTunesSearchEngine
-//
-//  Created by Wong Ka Ho Caleb on 2023/9/26.
-//
-
 import SwiftUI
 
 struct AllResultView: View {
@@ -25,12 +18,6 @@ struct AllResultView: View {
             
         }
         .navigationTitle(AppString.results[viewModel.language]!)
-//        .onAppear {
-//            viewModel.limit = 5
-//            viewModel.fetchSong(term: viewModel.searchTerm)
-//            viewModel.fetchAlbum(term: viewModel.searchTerm)
-//            
-//        }
     }
 }
 
