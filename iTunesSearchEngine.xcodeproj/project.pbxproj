@@ -16,9 +16,6 @@
 		3C79F1442ABD68D7007DE9C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F1432ABD68D7007DE9C5 /* ContentView.swift */; };
 		3C79F1462ABD68D9007DE9C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C79F1452ABD68D9007DE9C5 /* Assets.xcassets */; };
 		3C79F1492ABD68D9007DE9C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C79F1482ABD68D9007DE9C5 /* Preview Assets.xcassets */; };
-		3C79F1532ABD68D9007DE9C5 /* iTunesSearchEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F1522ABD68D9007DE9C5 /* iTunesSearchEngineTests.swift */; };
-		3C79F15D2ABD68D9007DE9C5 /* iTunesSearchEngineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F15C2ABD68D9007DE9C5 /* iTunesSearchEngineUITests.swift */; };
-		3C79F15F2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C79F15E2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift */; };
 		3CB8760B2AC475D6007D2E63 /* SearchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB8760A2AC475D6007D2E63 /* SearchHistoryView.swift */; };
 		3CB8760D2AC47DD0007D2E63 /* AppString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB8760C2AC47DD0007D2E63 /* AppString.swift */; };
 		3CB8760F2AC48B90007D2E63 /* AudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB8760E2AC48B90007D2E63 /* AudioViewModel.swift */; };
@@ -66,10 +63,7 @@
 		3C79F1452ABD68D9007DE9C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C79F1482ABD68D9007DE9C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3C79F14E2ABD68D9007DE9C5 /* iTunesSearchEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesSearchEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C79F1522ABD68D9007DE9C5 /* iTunesSearchEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchEngineTests.swift; sourceTree = "<group>"; };
 		3C79F1582ABD68D9007DE9C5 /* iTunesSearchEngineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesSearchEngineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C79F15C2ABD68D9007DE9C5 /* iTunesSearchEngineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchEngineUITests.swift; sourceTree = "<group>"; };
-		3C79F15E2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchEngineUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3CB8760A2AC475D6007D2E63 /* SearchHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryView.swift; sourceTree = "<group>"; };
 		3CB8760C2AC47DD0007D2E63 /* AppString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppString.swift; sourceTree = "<group>"; };
 		3CB8760E2AC48B90007D2E63 /* AudioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewModel.swift; sourceTree = "<group>"; };
@@ -130,8 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				3C79F1402ABD68D7007DE9C5 /* iTunesSearchEngine */,
-				3C79F1512ABD68D9007DE9C5 /* iTunesSearchEngineTests */,
-				3C79F15B2ABD68D9007DE9C5 /* iTunesSearchEngineUITests */,
 				3C79F13F2ABD68D7007DE9C5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -167,23 +159,6 @@
 				3C79F1482ABD68D9007DE9C5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		3C79F1512ABD68D9007DE9C5 /* iTunesSearchEngineTests */ = {
-			isa = PBXGroup;
-			children = (
-				3C79F1522ABD68D9007DE9C5 /* iTunesSearchEngineTests.swift */,
-			);
-			path = iTunesSearchEngineTests;
-			sourceTree = "<group>";
-		};
-		3C79F15B2ABD68D9007DE9C5 /* iTunesSearchEngineUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3C79F15C2ABD68D9007DE9C5 /* iTunesSearchEngineUITests.swift */,
-				3C79F15E2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift */,
-			);
-			path = iTunesSearchEngineUITests;
 			sourceTree = "<group>";
 		};
 		FD4FAC5A2AC12428005DCFAF /* View */ = {
@@ -394,7 +369,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C79F1532ABD68D9007DE9C5 /* iTunesSearchEngineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,8 +376,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C79F15F2ABD68D9007DE9C5 /* iTunesSearchEngineUITestsLaunchTests.swift in Sources */,
-				3C79F15D2ABD68D9007DE9C5 /* iTunesSearchEngineUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
