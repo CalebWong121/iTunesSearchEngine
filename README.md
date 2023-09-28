@@ -8,7 +8,7 @@ This is an iOS app built with SwiftUI that allows users to search for songs, alb
 * Search Results: The app displays the search results in a list, showing the song name, artist, and album art.
 * Pagination: The search results support paging, allowing users to load more records. Each page contains a maximum of 20 records.
 * Filter by Country: Users can filter the search results by country, narrowing down the displayed content.
-* Favorites: Users can bookmark songs by adding them to a "favorites" list, which can be accessed later for quick reference.
+* Book Mark: Users can bookmark songs by adding them to a "Book Mark" list, which can be accessed later for quick reference.
 * Multi-language Support: The app is available in English, Traditional Chinese (Hong Kong), and Simplified Chinese (China) languages.
 * Preview Tracks: Users can play preview tracks directly within the app.
 * Search History: The app automatically saves the search history, allowing users to repeat previous search terms easily.
